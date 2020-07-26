@@ -1,0 +1,11 @@
+.cardButton__button {
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+}
+
+.clear-decoration {
+  border: none; /* 枠線を消す */
+  outline: none; /* クリックしたときに表示される枠線を消す */
+  // background: transparent; /* 背景の灰色を消す */
+}

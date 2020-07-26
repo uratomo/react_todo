@@ -1,0 +1,10 @@
+.cardWrapper {
+  background-color: #ffffff;
+  min-height: 50px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.card__p {
+  margin: 0;
+}

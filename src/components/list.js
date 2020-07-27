@@ -5,8 +5,6 @@ import CardButton from "./cardButton";
 import "../style/list.scss";
 import "../style/color.css";
 
-import { connect } from "react-redux";
-
 class List extends React.Component {
   render() {
     return (
@@ -15,7 +13,7 @@ class List extends React.Component {
           <div className="list-header__left">title(props)</div>
           <div className="list-header__right">option</div>
         </div>
-        <CardList title={this.props.title} />
+        <CardList />
         <CardInput />
         <CardButton />
       </div>

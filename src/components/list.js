@@ -1,16 +1,13 @@
 import React from "react";
-import Card from "./card";
 import CardList from "./cardList";
-import CardInput from "./cardInput";
+import CardInput from "../containers/cardInput";
 import CardButton from "./cardButton";
 import "../style/list.scss";
 import "../style/color.css";
 
-class List extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+import { connect } from "react-redux";
 
+class List extends React.Component {
   render() {
     return (
       <div className="list-wrapper list-color">

@@ -1,4 +1,4 @@
-export const addTodo = (title) => ({
+export const addTodo = (text) => ({
   type: "ADD_TODO",
-  title,
+  text,
 });

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 class CardList extends React.Component {
   render() {
     const todos = this.props.todos;
-    return todos.map((item, i) => <Card key={i} title={item} />);
+    return todos.map((todo, i) => <Card key={i} todo={todo} />);
   }
 }
 

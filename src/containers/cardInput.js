@@ -12,17 +12,11 @@ class CardInput extends React.Component {
           type="textarea"
           size="25"
           placeholder="ここに文字を入力してください"
-          onChange={(e) => addTodo(e)}
+          onChange={(e) => this.props.addTodo(e.target.value)}
         />
       </div>
     );
   }
 }
-// ここいらないかも
-const mapStateToProps = (state) => {
-  return state;
-};
 
-const mapDispatchToProps = { addTodo };
-
-export default connect(mapStateToProps, mapDispatchToProps)(CardInput);
+export default connect(null, { addTodo })(CardInput);

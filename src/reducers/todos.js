@@ -1,12 +1,7 @@
 const todos = (state = ["memo"], action) => {
   switch (action.type) {
     case "ADD_TODO":
-      return [
-        ...state,
-        {
-          title: action.title,
-        },
-      ];
+      return [...state, action.text];
     default:
       return state;
   }

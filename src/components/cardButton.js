@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/cardButton.scss";
 import { connect } from "react-redux";
-import { newTodo } from "../actions";
+import { displayTodoInput } from "../actions";
 
 class cardButton extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class cardButton extends React.Component {
       <div className="cardButton__wrapper">
         <button
           className="cardButton__button"
-          onClick={() => this.props.newTodo()}
+          onClick={() => this.props.displayTodoInput()}
         >
           カードを追加
         </button>
@@ -18,4 +18,4 @@ class cardButton extends React.Component {
   }
 }
 
-export default connect(null, { newTodo })(cardButton);
+export default connect(null, { displayTodoInput })(cardButton);

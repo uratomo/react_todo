@@ -1,12 +1,12 @@
-export const addTodo = (text) => ({
-  type: "ADD_TODO",
+export const createTodo = (text) => ({
+  type: "CREATE_TODO",
   text,
 });
 
-export const newTodo = () => ({
+export const displayTodoInput = () => ({
   type: "NEW_TODO",
 });
 
-export const closeNewTodo = () => ({
+export const hiddenTodoInput = () => ({
   type: "CLOSE_NEW_TODO",
 });

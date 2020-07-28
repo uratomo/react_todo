@@ -1,15 +1,13 @@
 export const todos = (state = ["memo"], action) => {
   switch (action.type) {
-    case "ADD_TODO":
-      // closeNewTodo(); をここで実行したい
+    case "CREATE_TODO":
       return [...state, action.text];
     default:
       return state;
   }
 };
 
-export const newTodo = (state = false, action) => {
-  console.log(state);
+export const visibleTodoInput = (state = false, action) => {
   switch (action.type) {
     case "NEW_TODO":
       return true;

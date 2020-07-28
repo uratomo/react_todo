@@ -1,12 +1,12 @@
 import React from "react";
 import "../style/cardInput.scss";
 import { connect } from "react-redux";
-import { addTodo, closeNewTodo } from "../actions";
+import { createTodo, hiddenTodoInput } from "../actions";
 
 class CardInput extends React.Component {
   createTodo = (e) => {
-    this.props.addTodo(e.target.value);
-    this.props.closeNewTodo();
+    this.props.createTodo(e.target.value);
+    this.props.hiddenTodoInput();
   };
   handleKeyEnter = (e) => {
     if (e.key === "Enter") {
@@ -15,7 +15,7 @@ class CardInput extends React.Component {
   };
 
   render() {
-    if (this.props.newTodo) {
+    if (this.props.visibleTodoInput) {
       return (
         <div className="cardInput__wrapper">
           <input
@@ -34,7 +34,9 @@ class CardInput extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  newTodo: state.newTodo,
+  visibleTodoInput: state.visibleTodoInput,
 });
 
-export default connect(mapStateToProps, { addTodo, closeNewTodo })(CardInput);
+export default connect(mapStateToProps, { createTodo, hiddenTodoInput })(
+  CardInput
+);

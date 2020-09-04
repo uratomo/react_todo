@@ -1,5 +1,5 @@
 import React from "react"
-import "../style/cardButton.scss"
+import "../style/cardButton.css"
 import { connect } from "react-redux"
 import { displayTodoInput } from "../actions"
 

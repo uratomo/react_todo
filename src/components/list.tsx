@@ -2,7 +2,7 @@ import React from "react";
 import CardList from "./cardList";
 import CardInput from "../containers/cardInput";
 import CardButton from "./cardButton";
-import "../style/list.scss";
+import "../style/list.css";
 import "../style/color.css";
 
 class List extends React.Component {

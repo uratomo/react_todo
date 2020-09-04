@@ -1,18 +1,30 @@
 import React from "react"
-import "../style/cardInput.scss"
+import "../style/cardInput.css"
 import { connect } from "react-redux"
-import { createTodo, hiddenTodoInput } from "../actions"
+import { createTodo, hiddenTodoInput, displayTodoInput } from "../actions"
 
 interface CardInputProps {
   createTodo: any
   hiddenTodoInput: any
   visibleTodoInput: any
+  displayTodoInput: any
 }
 
 class CardInput extends React.Component<CardInputProps> {
+  componentDidMount() {
+    //  ここにfocusさせるためには？
+    // document.getElementsByClassName("cardInput").focus();
+    console.log(this.props)
+    // this.props.textInput.current.focus();
+  }
+
   createTodo = (e: any) => {
+    if (e.target.value === "") {
+      return this.props.hiddenTodoInput();
+    }
+
     this.props.createTodo(e.target.value)
-    this.props.hiddenTodoInput()
+    e.target.value = "";
   }
   handleKeyEnter = (e: any) => {
     if (e.key === "Enter") {
@@ -24,10 +36,9 @@ class CardInput extends React.Component<CardInputProps> {
     if (this.props.visibleTodoInput) {
       return (
         <div className="cardInput__wrapper">
-          <input
+          <textarea
             className="cardInput"
-            type="textarea"
-            size="25"
+            ref={this.props.textInput}
             placeholder="ここに文字を入力してください"
             onBlur={(e) => this.createTodo(e)}
             onKeyPress={(e) => this.handleKeyEnter(e)}
@@ -43,6 +54,6 @@ const mapStateToProps = (state: any) => ({
   visibleTodoInput: state.visibleTodoInput,
 })
 
-export default connect(mapStateToProps, { createTodo, hiddenTodoInput })(
+export default connect(mapStateToProps, { createTodo, hiddenTodoInput, displayTodoInput })(
   CardInput,
 )

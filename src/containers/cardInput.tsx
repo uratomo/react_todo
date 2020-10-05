@@ -24,7 +24,7 @@ class CardInput extends React.Component<CardInputProps> {
     }
 
     this.props.createTodo(e.target.value)
-    e.target.value = "";
+    e.target.value = null;
   }
   handleKeyEnter = (e: any) => {
     if (e.key === "Enter") {
@@ -38,7 +38,6 @@ class CardInput extends React.Component<CardInputProps> {
         <div className="cardInput__wrapper">
           <textarea
             className="cardInput"
-            ref={this.props.textInput}
             placeholder="ここに文字を入力してください"
             onBlur={(e) => this.createTodo(e)}
             onKeyPress={(e) => this.handleKeyEnter(e)}

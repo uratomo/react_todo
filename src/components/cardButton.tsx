@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { displayTodoInput } from "../actions"
 
 interface cardButtonProps {
-  displayTodoInput(): { type: string }
+  displayTodoInput: () => { type: string }
 }
 
 class cardButton extends React.Component<cardButtonProps> {
